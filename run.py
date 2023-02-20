@@ -113,3 +113,12 @@ def printLines():
         print("\u203E", end=" ")
 
 
+#variables to keep track of a players progress
+length_of_word_to_guess = len(randomWord)
+amount_of_times_wrong = 0
+current_guess_index = 0
+current_letters_guessed = []
+current_letters_right = 0
+remaining_guesses = 6
+
+

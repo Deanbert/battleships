@@ -125,11 +125,28 @@ remaining_guesses = 6
 
 while amount_of_times_wrong != 6 and current_letters_right != length_of_word_to_guess:
     """
-    Prints all letters guessed by the player
+    A loop that runs as long as the player has not guessed wrong more than 6 times
     """
+
+    #prints all letters guessed by the player
     print("\nLetters guessed:\n ", end="")
     for letter in current_letters_guessed:
         print(letter, end=" ")
     
-    #asks the user for their next letter choice
+    #asks the player to input their next guess
     letter_guessed = input("\nGuess a letter: ")
+
+    #checks if the players guess is right
+    if randomWord[current_guess_index] == letter_guessed:
+        print_hangman(amount_of_times_wrong)
+        
+        #updates the index if the players guess is correct
+        current_guess_index += 1
+        current_letters_guessed.append(letter_guessed)
+        current_letters_right = printWord(current_letters_guessed)
+        printLines()
+    
+    #checks if the players guess is wrong
+    else:
+        amount_of_times_wrong += 1
+        current_letters_guessed.append(letter_guessed)

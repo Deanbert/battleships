@@ -104,3 +104,12 @@ def printWord(guessedLetters):
     return rightLetters
 
 
+def printLines():
+    """
+    Prints a line of dashes to separate each guess
+    """
+    print("\r")
+    for char in randomWord:
+        print("\u203E", end=" ")
+
+

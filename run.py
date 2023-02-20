@@ -85,3 +85,22 @@ def print_hangman(wrong):
         print("/|\  |")
         print("/ \  |")
         print("    ===")
+
+
+def printWord(guessedLetters):
+    """
+    Prints the letters that have been guessed correctly by the player
+    and adds an underscore for letters that have not yet been guessed
+    """
+    counter=0
+    rightLetters=0
+    for char in randomWord:
+        if(char in guessedLetters):
+            print(randomWord[counter], end=" ")
+            rightLetters+=1
+        else:
+            print(" ", end=" ")
+        counter+=1
+    return rightLetters
+
+

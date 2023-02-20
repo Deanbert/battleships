@@ -7,6 +7,7 @@ name = input("What should we call you? ")
 print(f"Hello {name}! Let's play")
 print("You must complete the game within 6 guesses... OR ELSE!!!")
 print("\n+---+")
+print(" |   |")
 print(" O   |")
 print("/|\  |")
 print("/ \  |")
@@ -122,3 +123,13 @@ current_letters_right = 0
 remaining_guesses = 6
 
 
+while amount_of_times_wrong != 6 and current_letters_right != length_of_word_to_guess:
+    """
+    Prints all letters guessed by the player
+    """
+    print("\nLetters guessed:\n ", end="")
+    for letter in current_letters_guessed:
+        print(letter, end=" ")
+    
+    #asks the user for their next letter choice
+    letter_guessed = input("\nGuess a letter: ")

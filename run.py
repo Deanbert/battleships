@@ -23,11 +23,20 @@ while difficulty not in ['easy', 'medium', 'hard']:
 
 #chooses a word dictionary based on the users selected difficulty 
 if difficulty == 'easy':
-  wordDictionary = ["pickax", "whacky", "quacks", "boozey", "joyful", "chubby", "enzyme", "hotdog", "cheese", "jacket"]
+  word_dictionary = ["pickax", "whacky", "quacks", "boozey", "joyful", "chubby", "enzyme", "hotdog", "cheese", "jacket"]
 elif difficulty == 'medium':
-  wordDictionary = ["buzzcut", "qualify", "salvage", "sunbeam", "reading", "witness", "stencil", "costume", "grimace", "serving"]
+  word_dictionary = ["buzzcut", "qualify", "salvage", "sunbeam", "reading", "witness", "stencil", "costume", "grimace", "serving"]
 else:
-  wordDictionary = ["illusion", "teaching", "policies", "exorcist", "stumbled", "invested", "pregnant", "hydrated", "tapestry", "remarked"]
+  word_dictionary = ["illusion", "teaching", "policies", "exorcist", "stumbled", "invested", "pregnant", "hydrated", "tapestry", "remarked"]
+
+
+#chooses a random word from a dictionary based on the players selected difficulty
+randomWord = random.choice(word_dictionary)
+
+
+#prints an underscore to represent the number of letters in a chosen word
+for x in randomWord:
+  print("_", end=" ")
 
 
 def print_hangman(wrong):

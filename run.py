@@ -159,3 +159,17 @@ while amount_of_times_wrong != 6 and current_letters_right != length_of_word_to_
         printLines()
 
 
+if current_letters_right == length_of_word_to_guess:
+    """
+    Confirmation to the user if they have won or lost
+    """
+    print(f"Congratulations {name}! You live to see another day!")
+else:
+    print(f"You lost {name}, lights out for you. The word was '{randomWord}'.")
+
+print("Game over! Thank you for playing Hangman, feel free to try again.")
+
+"""
+Credit to Shaun Halverson and his "How To Code Hangman In Python" tutorial for beginners.
+His code was used as a foundation for me to build on and modify, creating my own take on the game. 
+"""

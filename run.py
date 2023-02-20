@@ -150,3 +150,12 @@ while amount_of_times_wrong != 6 and current_letters_right != length_of_word_to_
     else:
         amount_of_times_wrong += 1
         current_letters_guessed.append(letter_guessed)
+
+        #updates the hangman character after the players input
+        print_hangman(amount_of_times_wrong)
+        
+        #prints the list of letters currently guessed correctly
+        current_letters_right = printWord(current_letters_guessed)
+        printLines()
+
+

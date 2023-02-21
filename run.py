@@ -5,7 +5,7 @@ import random
 print("Welcome to Hangman!")
 name = input("What should we call you? ")
 print(f"Hello {name}! Let's play")
-print("You must complete the game within 6 guesses... OR ELSE!!!")
+print("You must complete the game within 8 guesses... OR ELSE!!!")
 print("\n+---+")
 print(" |   |")
 print(" O   |")
@@ -45,42 +45,54 @@ def print_hangman(wrong):
     Prints a different piece of the hangman character depending on the number of incorrect guesses
     """
     if(wrong == 0):
-        print("\n+---+")
-        print("    |")
-        print("    |")
-        print("    |")
+        print("\n     ")
+        print("     ")
+        print("     ")
+        print("     ")
         print("   ===")
     elif(wrong == 1): 
-        print("\n+---+")
-        print("O   |")
+        print("\n     ")
+        print("    |")
         print("    |")
         print("    |")
         print("   ===")
     elif(wrong == 2):
         print("\n+---+")
-        print("O   |")
-        print("|   |")
+        print("    |")
+        print("    |")
         print("    |")
         print("   ===")
     elif(wrong == 3):
         print("\n+---+")
         print(" O  |")
-        print("/|  |")
+        print("    |")
         print("    |")
         print("   ===")
     elif(wrong == 4):
         print("\n+---+")
         print(" O  |")
-        print("/|\ |")
+        print(" |  |")
         print("    |")
         print("   ===")
     elif(wrong == 5):
         print("\n+---+")
         print(" O  |")
-        print("/|\ |")
-        print("/   |")
+        print("/|  |")
+        print("    |")
         print("   ===")
     elif(wrong == 6):
+        print("\n+---+")
+        print(" O   |")
+        print("/|\  |")
+        print("     |")
+        print("    ===")
+    elif(wrong == 7):
+        print("\n+---+")
+        print(" O   |")
+        print("/|\  |")
+        print("/    |")
+        print("    ===")
+    elif(wrong == 8):
         print("\n+---+")
         print(" O   |")
         print("/|\  |")
@@ -120,12 +132,12 @@ amount_of_times_wrong = 0
 current_guess_index = 0
 current_letters_guessed = []
 current_letters_right = 0
-remaining_guesses = 6
+remaining_guesses = 8
 
 
-while amount_of_times_wrong != 6 and current_letters_right != length_of_word_to_guess:
+while amount_of_times_wrong != 8 and current_letters_right != length_of_word_to_guess:
     """
-    A loop that runs as long as the player has not guessed wrong more than 6 times
+    A loop that runs as long as the player has not guessed wrong more than 8 times
     """
 
     #prints all letters guessed by the player

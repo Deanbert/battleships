@@ -19,9 +19,6 @@
 * [Bugs](#bugs)
   
 * [Credits](#Credits)
-  * [Code Used](#Code-Used)
-  * [Content](#Content)
-  * [Acknowledgments](#Acknowledgments)
 
 - - -
 
@@ -148,16 +145,13 @@ Github Pages was used to deploy the live website. The instructions to achieve th
 
 * When run through the PEP8 Linter there were a number of indentation errors found which were easily resolved.
 * In the correct_guess function I iterated through guesses using a for loop blank spaces but the guesses ended up printing vertically. I corrected it using end = " ".
-* 
+* When a correct guess was entered the letters were being added as incorrect guesses. Turned out I had an incorrect print statement in my print_word function.
+* During the testing there were a lack of spaces between the lines causing the text to look messy. This was easily fixed by using \n.
 
 ## Credits
 
-### Code Used
-
-* Basic JS was taken from “Code with Ania Kubow” beginner guide and modified, comments in script.js indicate code that was used. - https://www.youtube.com/watch?v=RwFeg0cEZvQ 
-
-### Content
-
-Content for the website was written by Dean Fay.
-
-### Acknowledgments
+* Stackoverflow.
+* W3 Schools.
+* Code Institutes "Love Sandwiches" walkthrough project.
+* Special creditation Bethany in Student Support for her help during the bereavement of a family member.
+![Shaun Halverson's and his Python tutorial](https://www.youtube.com/watch?v=pFvSb7cb_Us)

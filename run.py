@@ -18,17 +18,17 @@ print("-------------------------------------------")
 #add difficulty selection for users that increases the letter count relative to difficulty selected
 difficulty = input("Select your preferred difficulty level\n easy - 6 Letter words,\n medium - 7 Letter words,\n hard - 8 Letter words):\n ")
 while difficulty not in ['easy', 'medium', 'hard']:
-  print("Invalid input. Please select a valid difficulty level.")
-  difficulty = input("Please select the difficulty level (easy, medium, or hard): ")
+    print("Invalid input. Please select a valid difficulty level.")
+    difficulty = input("Please select the difficulty level (easy, medium, or hard): ")
 
 
-#chooses a word dictionary based on the users selected difficulty 
+#chooses a word dictionary based on the users selected difficulty
 if difficulty == 'easy':
-  word_dictionary = ["pickax", "whacky", "quacks", "boozey", "joyful", "chubby", "enzyme", "hotdog", "cheese", "jacket"]
+    word_dictionary = ["pickax", "whacky", "quacks", "boozey", "joyful", "chubby", "enzyme", "hotdog", "cheese", "jacket"]
 elif difficulty == 'medium':
-  word_dictionary = ["buzzcut", "qualify", "salvage", "sunbeam", "reading", "witness", "stencil", "costume", "grimace", "serving"]
+    word_dictionary = ["buzzcut", "qualify", "salvage", "sunbeam", "reading", "witness", "stencil", "costume", "grimace", "serving"]
 else:
-  word_dictionary = ["illusion", "teaching", "policies", "exorcist", "stumbled", "invested", "pregnant", "hydrated", "tapestry", "remarked"]
+    word_dictionary = ["illusion", "teaching", "policies", "exorcist", "stumbled", "invested", "pregnant", "hydrated", "tapestry", "remarked"]
 
 
 #chooses a random word from a dictionary based on the players selected difficulty
@@ -37,62 +37,62 @@ randomWord = random.choice(word_dictionary)
 
 #prints an underscore to represent the number of letters in a chosen word
 for x in randomWord:
-  print("_", end=" ")
+    print("_", end=" ")
 
 
 def print_hangman(wrong):
     """
     Prints a different piece of the hangman character depending on the number of incorrect guesses
     """
-    if(wrong == 0):
+    if (wrong == 0):
         print("\n     ")
         print("     ")
         print("     ")
         print("     ")
         print("   ===")
-    elif(wrong == 1): 
+    elif (wrong == 1):
         print("\n     ")
         print("    |")
         print("    |")
         print("    |")
         print("   ===")
-    elif(wrong == 2):
+    elif (wrong == 2):
         print("\n+---+")
         print("    |")
         print("    |")
         print("    |")
         print("   ===")
-    elif(wrong == 3):
+    elif (wrong == 3):
         print("\n+---+")
         print(" O  |")
         print("    |")
         print("    |")
         print("   ===")
-    elif(wrong == 4):
+    elif (wrong == 4):
         print("\n+---+")
         print(" O  |")
         print(" |  |")
         print("    |")
         print("   ===")
-    elif(wrong == 5):
+    elif (wrong == 5):
         print("\n+---+")
         print(" O  |")
         print("/|  |")
         print("    |")
         print("   ===")
-    elif(wrong == 6):
+    elif (wrong == 6):
         print("\n+---+")
         print(" O   |")
         print("/|\  |")
         print("     |")
         print("    ===")
-    elif(wrong == 7):
+    elif (wrong == 7):
         print("\n+---+")
         print(" O   |")
         print("/|\  |")
         print("/    |")
         print("    ===")
-    elif(wrong == 8):
+    elif (wrong == 8):
         print("\n+---+")
         print(" O   |")
         print("/|\  |")
@@ -105,15 +105,15 @@ def printWord(guessedLetters):
     Prints the letters that have been guessed correctly by the player
     and adds an underscore for letters that have not yet been guessed
     """
-    counter=0
-    rightLetters=0
+    counter = 0
+    rightLetters = 0
     for char in randomWord:
-        if(char in guessedLetters):
+        if (char in guessedLetters):
             print(randomWord[counter], end=" ")
-            rightLetters+=1
+            rightLetters += 1
         else:
             print(" ", end=" ")
-        counter+=1
+        counter += 1
     return rightLetters
 
 
@@ -144,20 +144,20 @@ while amount_of_times_wrong != 8 and current_letters_right != length_of_word_to_
     print("\nLetters guessed:\n ", end="")
     for letter in current_letters_guessed:
         print(letter, end=" ")
-    
+
     #asks the player to input their next guess
     letter_guessed = input("\nGuess a letter: ")
 
     #checks if the players guess is right
     if randomWord[current_guess_index] == letter_guessed:
         print_hangman(amount_of_times_wrong)
-        
+
         #updates the index if the players guess is correct
         current_guess_index += 1
         current_letters_guessed.append(letter_guessed)
         current_letters_right = printWord(current_letters_guessed)
         printLines()
-    
+
     #checks if the players guess is wrong
     else:
         amount_of_times_wrong += 1
@@ -165,7 +165,7 @@ while amount_of_times_wrong != 8 and current_letters_right != length_of_word_to_
 
         #updates the hangman character after the players input
         print_hangman(amount_of_times_wrong)
-        
+
         #prints the list of letters currently guessed correctly
         current_letters_right = printWord(current_letters_guessed)
         printLines()
